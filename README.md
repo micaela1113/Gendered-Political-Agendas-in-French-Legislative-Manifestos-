@@ -10,19 +10,18 @@ This study examines gender-based thematic differences in political manifestos am
 
 * **`report.pdf`**: The final research report.
 * **`code/`**:
-    * `cleaned_master_data.parquet`: Processed dataset (Git LFS).
     * `EDA.ipynb`: exploration of and filtering out 'non déterminé' gender, document and text descriptive statistics, top-word gender and time descriptive analyses.
     * `LDA.ipynb`: text BoW vectorization, LDA topic modeling, model selection, and gender topic analysis.
     * `text_preprocessing.ipynb`: Text cleaning.
-* **`data/`**: digitalized manifestos' transcriptions.
+* **`data/`**: digitalized manifestos' transcriptions and French stopwords.
 * **`literature/`**: academic references.
 * **`metadata/`**: Candidate and substitute demographics and election-specific metadata.
 * **`temp/`**: saved LDA models for model selection (from 3 to 20 topics).
+* **`fr_core_news_md-3.8.0-py3-none-any.whl`** : French spaCy model used for lemmatization.
 
 
 ## ⚙️ Setup & Reproduction
 To reproduce the analysis:
-1. Ensure Git LFS is installed and pull the large files.
-2. Run `text_preprocessing.ipynb` to read cleaned data (optional, as the parquet is provided).
-3. Run `EDA.ipynb` to explore the parquet dataset and obtain descriptive statistics on the corpus.
-4. Run `LDA.ipynb` to vectorize the text, run the LDA models and reproduce gender topic analysis.
+1. Run `text_preprocessing.ipynb` to produce the cleaned data file 'cleaned_master_data.parquet' and save it in `data/`  (necessary for the next two steps).
+2. Run `EDA.ipynb` to explore the parquet dataset and obtain descriptive statistics on the corpus.
+3. Run `LDA.ipynb` to vectorize the text, run the LDA models and reproduce gender topic analysis.
